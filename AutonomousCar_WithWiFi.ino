@@ -1,4 +1,57 @@
 // Arduino Pro Micro Code
+//=================================
+/*
+-----------------------------------
+FUNCTION ORDER:
+-----------------------------------
+SETUP FUNCTIONS
+  ┗━ setup_Ultrasonic_FRONT
+  ┗━ setup_Ultrasonic_SIDE
+  ┗━ setup_Servo_1
+  ┗━ setup_Motors
+  ┗━ setup_SerialToESP
+
+DRIVE FUNCTIONS
+  ┗━ setFORWARD_SPEED
+  ┗━ start_FORWARD
+  ┗━ drive_Motor_FORWARD
+  ┗━ drive_Motor_BACKWARD
+  ┗━ drive_Motor_RIGHT
+  ┗━ drive_Motor_LEFT
+  ┗━ slowAndStop_FORWARD
+
+TEST FUNCTIONS
+  ┗━ test_Motors
+  ┗━ test_Servo
+  ┗━ test_SerialToESP
+
+DISTANCE CALCULATION FUNCTIONS
+  ┗━ calculate_Distance_FRONT
+  ┗━ calculate_Distance_SIDE
+  ┗━ recalculateDistance1
+  ┗━ lockInDistance
+
+PRINTING FUNCTIONS
+  ┗━ sendToESP
+  ┗━ print_ultrasonic_data
+
+MOMENTUM SYNC FUNCTION
+* ┗━ Read MPU6050 accl
+*   ┗━ Spin_Distance_Lock
+
+-----------------------------------
+THINGS TO ADD:
+-----------------------------------
+Pins for SerialToESP connection
+Add things to do during driving delays like communication
+  ┗━ Wasted time during delays
+Fix turning time around objects
+  ┗━ Add second UT turning direction decision (R or L)
+Tweak time spent turning with second UT
+Make second script for ESP8266
+
+*/
+//=================================
 // Libraries
 #include <Servo.h>
 #include <SoftwareSerial.h>
@@ -44,54 +97,6 @@ int totalRecalcDistance1 = 0;
 boolean perfectDist1 = false;
 
 //End of variables
-//=================================
-//=================================
-/*
------------------------------------
-FUNCTION ORDER:
------------------------------------
-SETUP FUNCTIONS
-  ┗━ setup_Ultrasonic_FRONT
-  ┗━ setup_Ultrasonic_SIDE
-  ┗━ setup_Servo_1
-  ┗━ setup_Motors
-  ┗━ setup_SerialToESP
-
-DRIVE FUNCTIONS
-  ┗━ setFORWARD_SPEED
-  ┗━ start_FORWARD
-  ┗━ drive_Motor_FORWARD
-  ┗━ drive_Motor_BACKWARD
-  ┗━ drive_Motor_RIGHT
-  ┗━ drive_Motor_LEFT
-  ┗━ slowAndStop_FORWARD
-
-TEST FUNCTIONS
-  ┗━ test_Motors
-  ┗━ test_Servo
-  ┗━ test_SerialToESP
-
-DISTANCE CALCULATION FUNCTIONS
-  ┗━ calculate_Distance_FRONT
-  ┗━ calculate_Distance_SIDE
-  ┗━ recalculateDistance1
-  ┗━ lockInDistance
-
-PRINTING FUNCTIONS
-  ┗━ sendToESP
-  ┗━ print_ultrasonic_data
------------------------------------
-THINGS TO ADD:
------------------------------------
-Pins for SerialToESP connection
-Add things to do during driving delays like communication
-  ┗━ Wasted time during delays
-Fix turning time around objects
-  ┗━ Add second UT turning direction decision (R or L)
-Tweak time spent turning with second UT
-Make second script for ESP8266
-
-*/
 //=================================
 //=================================
 // SETUP FUNCTIONS
