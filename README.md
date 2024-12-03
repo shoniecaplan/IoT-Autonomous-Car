@@ -3,5 +3,6 @@ Progress of my IoT Self-Driving Model Car. The car uses two microcontrollers for
 
 ## Video of the car in Sep 2022. 
 Since, an ESP-8266 microcontroller has been added to the car, serial connected to the Arduino Pro Micro, and IoT connected for WiFi communication to a webserver.
-https://user-images.githubusercontent.com/94767648/228718540-3bced5c8-4990-4ece-9397-fed442e010a5.mp4
+<video src='https://user-images.githubusercontent.com/94767648/228718540-3bced5c8-4990-4ece-9397-fed442e010a5.mp4)' width=180/>
+
 
